@@ -8,6 +8,7 @@ class Post(models.Model):
 
     nomi = models.CharField(max_length=50)
     yillar = models.IntegerField()
+    oylik_ish_haqi = models.TextField()
 
     def __str__(self):
         return self.nomi

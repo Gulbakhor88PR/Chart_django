@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      #chartdiv {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+
 </head>
 <body>
-
-<!-- Styles -->
-<style>
-    #chartdiv {
-      width: 100%;
-      height: 500px;
-    }
-</style>
+  
     
     <!-- Resources -->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -101,43 +101,11 @@
     
     
     // Set data
-    var data = [{
-      country: "USA",
-      value: 2025
-    }, {
-      country: "China",
-      value: 1882
-    }, {
-      country: "Japan",
-      value: 1809
-    }, {
-      country: "Germany",
-      value: 1322
-    }, {
-      country: "UK",
-      value: 1122
-    }, {
-      country: "France",
-      value: 1114
-    }, {
-      country: "India",
-      value: 984
-    }, {
-      country: "Spain",
-      value: 711
-    }, {
-      country: "Netherlands",
-      value: 665
-    }, {
-      country: "Russia",
-      value: 580
-    }, {
-      country: "South Korea",
-      value: 443
-    }, {
-      country: "Canada",
-      value: 441
-    }];
+    var data = [{% for post in posts %} {
+      country: '{{ post.nomi }}',
+      value: {{ post.yillar }},
+      labelText: '{{ post.oylik_ish_haqi }}'
+    }, {% endfor %} ];
     
     xAxis.data.setAll(data);
     series.data.setAll(data);
@@ -154,5 +122,7 @@
     <!-- HTML -->
     <div id="chartdiv"></div>
 
+  
+  
 </body>
 </html>

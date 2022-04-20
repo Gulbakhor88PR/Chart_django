@@ -27,9 +27,11 @@
             type: "bar",
             data: {
                 labels: [{% for post in posts %} '{{ post.nomi }}', {% endfor %}],
+                        
                 datasets: [{
                     label: 'NKMK arxivida saqlanayotgan hujjatlar nomi va yillari', 
                     data: [{% for post in posts %} {{ post.yillar }}, {% endfor %}],
+                    data: [{% for post in posts %} '{{ post.oylik_ish_haqi }}', {% endfor %}],
                     backgroundColor:  [
                         'rgba(66, 239, 245, 0.2)',
                         'rgba(66, 194, 245, 0.2)',
