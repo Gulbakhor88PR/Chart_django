@@ -26,10 +26,10 @@
         const myChart = new Chart(ctx, {
             type: "bar",
             data: {
-                labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Aвгуст', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' ],
+                labels: [{% for post in posts %} '{{ post.nomi }}', {% endfor %}],
                 datasets: [{
-                    label: 'Уртача хаво харорати Узбекистон иклимида', 
-                    data: [2, 4, 10, 15, 21, 26, 28, 25, 21, 14, 9, 3, ],
+                    label: 'NKMK arxivida saqlanayotgan hujjatlar nomi va yillari', 
+                    data: [{% for post in posts %} {{ post.yillar }}, {% endfor %}],
                     backgroundColor:  [
                         'rgba(66, 239, 245, 0.2)',
                         'rgba(66, 194, 245, 0.2)',
