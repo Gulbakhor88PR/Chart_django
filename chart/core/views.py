@@ -17,3 +17,11 @@ def example(request):
     }
 
     return render(request, 'examp.html', context)
+
+def buble(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+    
+    return render(request, 'buble.html', context)
