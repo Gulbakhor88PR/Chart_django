@@ -25,3 +25,11 @@ def buble(request):
     }
     
     return render(request, 'buble.html', context)
+
+def new(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'new.html', context)
