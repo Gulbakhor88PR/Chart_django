@@ -58,7 +58,7 @@ var chart = root.container.children.push(
 // Define data
 var data = [{% for post in posts %}
 {
-    country: '{{ post.nomi }}',
+  country: '{{ post.nomi }}',
   sales: {{ post.yillar }}
 }, {% endfor %}];
 

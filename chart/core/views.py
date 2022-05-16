@@ -33,3 +33,27 @@ def new(request):
     }
 
     return render(request, 'new.html', context)
+
+def new2(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'new2.html', context)
+
+def new3(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'new3.html', context)
+
+def new4(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'new4.html', context)
