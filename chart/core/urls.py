@@ -8,6 +8,6 @@ urlpatterns = [
     path('new/', new),
     path('new2/', new2),
     path('new3/', new3),
-    path('new4/', new4)
-
+    path('new4/', new4),
+    path('new5/', new5)
 ]

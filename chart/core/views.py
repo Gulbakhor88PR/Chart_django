@@ -57,3 +57,11 @@ def new4(request):
     }
 
     return render(request, 'new4.html', context)
+
+def new5(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'new5.html', context)
